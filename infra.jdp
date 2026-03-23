@@ -3,14 +3,14 @@ pipeline {
     stages{
         stage('PULL'){
             steps{
-                git branch: 'main', url: ' https://github.com/aakanksha-sabale/cdec-b48-terraform '
+                git branch: 'main', url: ' https://github.com/aakanksha-sabale/cdec-b48-terraform.git'
             }
         }
         stage('PLAN'){
             steps{
                 sh'''
                 cd infra/radison-hms-infra
-                terraform init
+                terraform init -reconfigure
                 terraform plan --var-file=vars/staging.tfvars
                 '''
             }
