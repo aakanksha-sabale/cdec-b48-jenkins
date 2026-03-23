@@ -10,6 +10,10 @@ pipeline {
             steps{
                 sh'''
                 cd infra/radison-hms-infra
+
+                 rm -rf .terraform
+                 rm -f .terraform.lock.hcl
+
                 terraform init -reconfigure
                 terraform plan --var-file=vars/staging.tfvars
                 '''
@@ -24,6 +28,10 @@ pipeline {
             steps{
                 sh'''
                 cd infra/radison-hms-infra
+
+                rm -rf .terraform
+                 rm -f .terraform.lock.hcl
+                 
                 terraform init  -reconfigure
                 terraform apply -auto-approve --var-file=vars/staging.tfvars
                 '''
