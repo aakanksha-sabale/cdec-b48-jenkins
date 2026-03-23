@@ -24,7 +24,7 @@ pipeline {
             steps{
                 sh'''
                 cd infra/radison-hms-infra
-                terraform init
+                terraform init  -reconfigure
                 terraform apply -auto-approve --var-file=vars/staging.tfvars
                 '''
             }
