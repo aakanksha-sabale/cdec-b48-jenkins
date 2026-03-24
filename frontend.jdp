@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('PULL'){
             steps{
-                git branch: 'main', url: 'https://github.com/shubhamkalsait/EasyCRUD.git'
+                git branch: 'main', url: 'https://github.com/aakanksha-sabale/docker123.git'
             }
         }
         stage ('BUILD'){
