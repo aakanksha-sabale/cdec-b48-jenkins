@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('PULL'){
             steps{
-                git branch: 'cdec-b48', url: 'https://github.com/shubhamkalsait/EasyCRUD.git'
+                git branch: 'cdec-b48', url: 'https://github.com/aakanksha-sabale/cdec-b48-jenkins'
             }
         }
         stage ('BUILD'){
